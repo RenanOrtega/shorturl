@@ -8,14 +8,19 @@ const app = express();
 
 connectDB();
 
-import indexRouter from './routes/index.js';
-import { router } from './routes/urls.js';
+import index from './routes/index.js';
+import shortner from './routes/shortner.js';
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use('/', indexRouter);
-app.use('/api', router);
+app.use('/', index);
+app.use('/api', shortner);
+app.use((req, res, next) => {
+    res
+    .status(404)
+    .send('Sorry, route not found.');
+  });
 
 const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => {
