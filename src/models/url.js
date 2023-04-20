@@ -5,7 +5,7 @@ const UrlSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    origUrl: {
+    originalUrl: {
         type: String,
         required: true,
     },
