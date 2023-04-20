@@ -22,6 +22,7 @@ app.use((req, res, next) => {
     .send('Sorry, route not found.');
   });
 
+  // ADICINANDO COMMENTARIOPS NO CODIGO
 const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => {
     console.log(`Server is running at ${process.env.BASE}`);
